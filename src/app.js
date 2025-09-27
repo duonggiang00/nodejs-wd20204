@@ -1,6 +1,7 @@
 import express from "express";
 import postRouter from "../routers/posts";
 import morgan from "morgan";
+import bt2Router from "../routers/bt2";
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/posts", postRouter);
+
+app.use("/postsLab2", bt2Router);
 
 app.listen(3000, () => {
   console.log(`Server is running on port http://localhost:3000`);
